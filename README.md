@@ -19,7 +19,7 @@ Match all the cards to win with as less moves as you can.
 * At any point the restart button can be pressed to reset the game.
 
 ## Installation
-Click [here] (https://nataliarozengard.github.io/) and Have Fun :)
+Click [here](https://nataliarozengard.github.io/) and Have Fun :)
 
 or
 
