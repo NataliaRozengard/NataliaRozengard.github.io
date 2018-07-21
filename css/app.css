@@ -1,0 +1,232 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/fairy.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Merienda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 300;
+    cursor: default;
+    color: blue;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background-color: rgba(56, 178, 230, 0.59);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+    position: relative;
+}
+
+.deck .card {
+    margin-top: 20px;
+    height: 125px;
+    width: 125px;
+    background: rgba(234, 243, 244, 0.8);
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    transform:  rotateY( 0deg );
+    transition: transform .5s;
+
+}
+
+.deck .card.open {
+    transform: rotateY( 180deg );
+    transition: transform .5s;
+    background: rgba(250, 233, 5, 0.73);
+    cursor: default;
+}
+
+.deck .card.show {
+    transform: rotateY( 180deg );
+    font-size: 33px;
+}
+
+.deck .card.match {
+    transform: rotateY( 180deg );
+    cursor: default;
+    background: rgba(127, 227, 121, 0.82);
+    font-size: 33px;
+    -webkit-animation: matchblink 0.2s 4;  /* Safari 4+ */
+    -moz-animation:  matchblink 0.2s 4;  /* Fx 5+ */
+    -o-animation: matchblink 0.2s 4;  /* Opera 12+ */
+    animation: matchblink 0.2s 4;  /* IE 10+, Fx 29+ */
+    animation-delay: 0.4s;
+  }
+
+  @-webkit-keyframes matchblink {
+    0%, 49% {
+      background-color: rgba(228, 199, 2, 0.73);
+    }
+    50%, 100% {
+      background-color: rgba(127, 227, 121, 0.82);
+    }
+  }
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 550px;
+    margin-bottom: 10px;
+    cursor: default;
+    background-color: rgba(252, 252, 252, 0.8);
+    padding: 13px 35px;
+    border-radius: 20px;
+    color:rgb(121, 158, 37);
+    font-size: 20px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding-right: 15px;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    color: rgb(240, 169, 12);
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.score-panel .timer {
+  padding-left: 100px;
+}
+
+/* popup message */
+
+.hide {
+  display: none;
+}
+
+.popup {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  margin: auto;
+  background-color: rgb(4, 51, 156);
+  border: 8px groove orange;
+  border-radius: 180px 30px 180px 30px;
+  text-align: center;
+  color: rgb(151, 199, 41);
+  box-shadow: 5px 4px 20px 0 rgba(46, 61, 73, 0.8);
+}
+
+.close {
+  float: right;
+  padding-right: 16px;
+  cursor: pointer;
+  font-weight:bold;
+}
+
+.popup h2 {
+  margin-top: 60px;
+  cursor: default;
+  color: rgb(254, 186, 11);
+}
+
+p {
+  cursor: default;
+}
+
+.again {
+  padding: 10px 20px;
+  color: rgb(121, 158, 37);
+  font-size: 15px;
+  background-color: white;
+  border-radius: 30px;
+  border: 3px ridge rgb(254, 186, 11);
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Merienda', cursive;
+}
+
+ul.stars{
+  padding-left: 0px;
+}
+
+.final-stars li {
+  list-style: none;
+  display: inline-block;
+  color: rgb(240, 169, 12);
+}
+
+
+/*styles for phone view*/
+@media screen and (max-width: 700px) {
+
+.deck {
+  width: 90%;
+}
+
+.deck .card {
+  height: 90px;
+  width: 90px;
+  margin-top: 5px;
+}
+
+.score-panel {
+  width: 80%;
+}
+
+.score-panel .timer {
+  padding-left: 25%;
+}
+
+.popup{
+  width: 80%;
+}
+
+}
