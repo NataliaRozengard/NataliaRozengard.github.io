@@ -19,5 +19,9 @@ Match all the cards to win with as less moves as you can.
 * At any point the restart button can be pressed to reset the game.
 
 ## Installation
+Click [here] (https://nataliarozengard.github.io/) and Have Fun :)
+
+or
+
 1. Download or Clone the Repository.
 1. Open index.html file to view the project in your browser.
